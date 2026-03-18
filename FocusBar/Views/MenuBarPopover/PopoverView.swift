@@ -5,6 +5,7 @@ enum PopoverTab: String, CaseIterable {
     case appUsage = "Apps"
     case running = "Running"
     case storage = "Storage"
+    case todo = "To-Do"
 
     var icon: String {
         switch self {
@@ -12,6 +13,7 @@ enum PopoverTab: String, CaseIterable {
         case .appUsage: "clock"
         case .running: "cpu"
         case .storage: "internaldrive"
+        case .todo: "checklist"
         }
     }
 }
@@ -47,6 +49,8 @@ struct PopoverView: View {
                     RunningAppsTab()
                 case .storage:
                     StorageTab()
+                case .todo:
+                    TodoTab()
                 }
             }
             .frame(maxHeight: .infinity)

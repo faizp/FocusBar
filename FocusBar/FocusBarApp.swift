@@ -7,6 +7,7 @@ struct FocusBarApp: App {
     @State private var resourceMonitorService = ResourceMonitorService()
     @State private var storageService = StorageService()
     @State private var categoryManager = CategoryManager()
+    @State private var todoService = TodoService()
 
     var body: some Scene {
         MenuBarExtra("FocusBar", systemImage: "chart.bar.fill") {
@@ -16,6 +17,7 @@ struct FocusBarApp: App {
                 .environment(resourceMonitorService)
                 .environment(storageService)
                 .environment(categoryManager)
+                .environment(todoService)
                 .onAppear {
                     startServices()
                 }
